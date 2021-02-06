@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 public class Ui extends JPanel implements ActionListener{
 	
+		
 		private JButton block;
 		private JButton start;
 		private JButton goal;
@@ -56,15 +57,17 @@ public class Ui extends JPanel implements ActionListener{
 					}
 					
 					if(e.getSource() == find) {
+						double TStart = System.currentTimeMillis();
 						Vector2i start = grid.getFirstStartingPosition();
 						Vector2i goal = grid.getFirstGoalPosition();
 						
 						if(start!=null && goal!=null) {
-							List<Noeud> path = Astar.findPath(grid, start, goal);
+							List<Noeud> path  = Astar.findPath(grid, start, goal);
 							if(path!= null) {
 								 if(path.size() >= 0) {
 									 grid.setPath(path);
 									 grid.showFoundPath();
+									 JOptionPane.showMessageDialog(null,"Path Found ! in "+(System.currentTimeMillis() - TStart) +" ms");
 								 }
 							}
 						}else {

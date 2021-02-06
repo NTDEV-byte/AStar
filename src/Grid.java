@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.util.List;
 
@@ -52,11 +51,12 @@ public class Grid {
 				}
 				
 				public void setGrid(int x,int y,int state) { 
+					if(x >= 0 && x < width && y >= 0 && y < height)
 					cells[x + y * width] = state;
 				}
 				
 				public boolean inBounds(int x,int y) {
-					 return x >= 0 && x <= 79 && y >= 0 && y <= 59;
+					 return x >= 0 && x < width && y >= 0 && y <= height;
 				}
 				
 				private int countTarget(int type) { 
@@ -155,12 +155,15 @@ public class Grid {
 				if(goal!=null) {
 					 return goal;
 				}
-					JOptionPane.showMessageDialog(null, "goal is null !!");
+					JOptionPane.showMessageDialog(null, "Goal is null !!");
 					return null;
 			}
 			
 			public int getStateAt(int x,int y) { 
+				if(x >= 0 && x < width && y >= 0 && y < height)
 				 return cells[x + y * width];
+				
+				return NO_BLOCK;
 			}
 
 			public int getStateIns() {
@@ -171,6 +174,7 @@ public class Grid {
 				 for(int i=0;i<cells.length;i++) {
 					  cells[i] = NO_BLOCK;
 				 }
+				if(path!=null) path.clear();
 			}
 			
 			public void setStateIns(int stateIns) {
@@ -184,4 +188,5 @@ public class Grid {
 			public void setPath(List<Noeud> path) {
 				this.path = path;
 			}
+			
 }

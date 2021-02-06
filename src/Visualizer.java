@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Visualizer extends JPanel{
@@ -14,8 +13,8 @@ public class Visualizer extends JPanel{
 	private static final long serialVersionUID = 1L;
 		public static final int WIDTH = 800;
 		public static final int HEIGHT = 600;
-		public static final int WC = 10;
-		public static final int HC = 10;
+		public static final int WC = 4;
+		public static final int HC = 4;
 		
 		private Grid grid;
 		private InputHandler input;
@@ -53,14 +52,11 @@ public class Visualizer extends JPanel{
 			return input.mouseY / HC;
 		}
 		
-		public static void main(String args[]) { 
-				Grid grid = new Grid(WIDTH,HEIGHT,WC,HC);
-				JFrame window = new JFrame("AStar");
-				window.setVisible(true);
-				window.setResizable(false);
-				window.setLocationRelativeTo(null);
-				window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				window.add(new App(grid));
-				window.pack();
+		public static int getWidthGrid() { 
+			return WIDTH / WC;
+		}
+
+		public static int getHeightGrid() { 
+			return HEIGHT / HC;
 		}
 }

@@ -40,15 +40,18 @@ public class InputHandler implements MouseMotionListener,MouseListener{
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
+	if((e.getX() / Visualizer.WC) >= 0 && (e.getX() / Visualizer.WC)< Visualizer.getWidthGrid() && (e.getY() / Visualizer.HC) >= 0 && (e.getY() / Visualizer.HC) < Visualizer.getHeightGrid()) {
+		mouseX = e.getX();
+		mouseY = e.getY();
+	}
 	}
 
 	@Override
 	public void mouseMoved(MouseEvent e) {
-		// TODO Auto-generated method stub
-		mouseX = e.getX();
-		mouseY = e.getY();
+		if((e.getX() / Visualizer.WC) >= 0 && (e.getX() / Visualizer.WC)< Visualizer.getWidthGrid() && (e.getY() / Visualizer.HC) >= 0 && (e.getY() / Visualizer.HC) < Visualizer.getHeightGrid()) {
+			mouseX = e.getX();
+			mouseY = e.getY();
+		}
 	}
 
 }

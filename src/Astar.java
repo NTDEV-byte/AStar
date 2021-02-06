@@ -3,6 +3,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 public class Astar {
 	
 		
@@ -46,8 +48,7 @@ public class Astar {
 								closedList.clear();
 								return path;
 						}
-						
-						
+
 					openList.remove(current);
 					closedList.add(current); //visité 
 					
@@ -58,13 +59,13 @@ public class Astar {
 						int x = current.getPosition().x;
 						int y = current.getPosition().y;
 						
-						Vector2i currentPosition = new Vector2i(current.getPosition().x + xi, current.getPosition().y + yi);
+						Vector2i currentPosition = new Vector2i(x + xi, y + yi);
 						if(!grid.inBounds(currentPosition.x,currentPosition.y)) continue;
 						int block_at = grid.getStateAt(currentPosition.x, currentPosition.y);
 						if(block_at == Grid.SOLID_BLOCK) continue;
-						if(grid.inBounds((x + xi), (y + yi))) {
+						if(grid.inBounds(currentPosition.x,currentPosition.y)) {
 							if((!currentPosition.equals(start)) && (!currentPosition.equals(goal))  ) { 
-								grid.setGrid((x + xi), (y + yi), Grid.CURRENT_BLOCK);
+								grid.setGrid(currentPosition.x, currentPosition.y, Grid.CURRENT_BLOCK);
 							}
 						}
 						double gCost = current.getgCost() + getDistance(current.getPosition(),currentPosition);
@@ -74,9 +75,8 @@ public class Astar {
 						if(!inVec(currentPosition,openList)) openList.add(noeud);
 					}
 				}
-					
-				System.out.println("no path found !");
 				
+				JOptionPane.showMessageDialog(null, "No Path Found !");
 				closedList.clear();
 				return null;
 			}
