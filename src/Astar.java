@@ -9,17 +9,18 @@ public class Astar {
 	
 		
 			private Astar() {
-				
 			}
 	
 		private static class TrieuseDeNoeud implements Comparator<Noeud>{
 			@Override
 			public int compare(Noeud o1, Noeud o2) {
-				if(o1.getfCost() > o2.getfCost()) return 1;
+				if(o1.getfCost() >  o2.getfCost()) return 1;
 				if(o2.getfCost() < o1.getfCost()) return -1;
 				return 0;
 			} 
 		}
+		
+		
 		
 			public static List<Noeud> findPath(Grid grid,Vector2i start,Vector2i goal) { 
 				List<Noeud> openList = new ArrayList<Noeud>();

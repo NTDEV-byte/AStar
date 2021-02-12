@@ -13,8 +13,8 @@ public class Visualizer extends JPanel{
 	private static final long serialVersionUID = 1L;
 		public static final int WIDTH = 800;
 		public static final int HEIGHT = 600;
-		public static final int WC = 4;
-		public static final int HC = 4;
+		public static final int WC = 10;
+		public static final int HC = 10;
 		
 		private Grid grid;
 		private InputHandler input;

@@ -22,7 +22,6 @@ public class AppAStar extends JPanel{
 						this.add(vis);
 					}
 					
-					
 					public static void main(String args[]) { 
 						Grid grid = new Grid(Visualizer.WIDTH,Visualizer.HEIGHT,Visualizer.WC,Visualizer.HC);
 						JFrame window = new JFrame("AStar");
