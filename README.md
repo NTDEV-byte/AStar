@@ -12,6 +12,7 @@ One click to insert a block at a time
 Click left Button mouse and drag to insert multiple obstacles
 Click Right to remove an obstacle
 
+
 Click find button to search for a possible path
 
 
@@ -41,3 +42,6 @@ Goal Point setted
 Path Found 
 
 ![found](https://user-images.githubusercontent.com/52135405/116711292-ff840300-a9d2-11eb-96df-70e208b741fc.PNG)
+
+Yellow indicates the visited nodes 
+Cyan the found path
