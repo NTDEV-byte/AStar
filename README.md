@@ -24,24 +24,16 @@ Main Screen
 
 Start Point setted
 
-
-![start](https://user-images.githubusercontent.com/52135405/116711101-d1062800-a9d2-11eb-9377-0d475b0b822d.PNG)
-
-
-Blocks 
-
-![block](https://user-images.githubusercontent.com/52135405/116711202-e8451580-a9d2-11eb-9f65-80c67d0dcdb3.PNG)
-
+![start](https://user-images.githubusercontent.com/52135405/116801164-71f5ff80-ab07-11eb-920f-94dc09f0da89.PNG)
 
 
 Goal Point setted
 
-![goal](https://user-images.githubusercontent.com/52135405/116711236-ef6c2380-a9d2-11eb-8c84-1b32070cb417.PNG)
-
+![ready](https://user-images.githubusercontent.com/52135405/116801201-b71a3180-ab07-11eb-86af-06fd05efb8db.PNG)
 
 Path Found 
 
-![found](https://user-images.githubusercontent.com/52135405/116711292-ff840300-a9d2-11eb-96df-70e208b741fc.PNG)
+![pathFounded](https://user-images.githubusercontent.com/52135405/116801203-c0a39980-ab07-11eb-8946-a71fa9644709.PNG)
 
 Yellow indicates the visited nodes 
 Cyan the found path
